@@ -72,6 +72,14 @@ class Carrito {
     }
     this.listar();
   }
+  vaciar() {
+    this.total = 0;
+    this.cantidadCervezas = 0;
+    this.carrito = [];
+    localStorage.setItem("carrito", JSON.stringify(this.carrito));
+    this.listar();
+  }
+
   listar() {
     this.total = 0;
     this.cantidadCervezas = 0;
@@ -113,6 +121,8 @@ const spanTotalCarrito = document.querySelector("#totalCarrito");
 const divCervezas = document.querySelector("#cervezas");
 const divCarrito = document.querySelector("#carrito");
 const inputBuscar = document.querySelector("#inputBuscar");
+const botonCarrito = document.querySelector("section h1");
+const botonComprar = document.querySelector("#botonComprar");
 
 const carrito = new Carrito();
 
@@ -127,7 +137,7 @@ function cargarProductos(cervezas) {
     <h2>${cerveza.nombre}</h2>
     <p class="precio">${cerveza.precio}</p>
     <div class="imagen">
-    <img src="images/${cerveza.imagen}" width=150px />
+      <img src="images/${cerveza.imagen}" width=150px />
     </div>
     <a href="#" class="btnAgregar"btn btn-primary data-id="${cerveza.id}">Agregar al Carrito</a>
     </div>
@@ -142,6 +152,14 @@ function cargarProductos(cervezas) {
       const idCerveza = +boton.dataset.id;
       const cerveza = ctlg.productoPorId(idCerveza);
       carrito.agregar(cerveza);
+      Toastify({
+        text: `Se ha agregado ${cerveza.nombre} al carrito`,
+        gravity: "bottom",
+        position: "center",
+        style: {
+          background: "5f5d8d",
+        },
+      }).showToast();
     });
   }
 }
@@ -151,4 +169,21 @@ inputBuscar.addEventListener("input", (event) => {
   const palabra = inputBuscar.value;
   const cervezas = ctlg.productosPorNombre(palabra);
   cargarProductos(cervezas);
+});
+
+botonCarrito.addEventListener("click", (event) => {
+  document.querySelector("section").classList.toggle("ocultar");
+});
+
+botonComprar.addEventListener("click", (event) => {
+  event.preventDefault();
+  carrito.vaciar();
+  Swal.fire({
+    title: "Felicidades",
+    text: "Gracias por tu compra!",
+    imageUrl: "./images/logo-transparente.png",
+    imageWidth: 400,
+    imageHeight: 300,
+    imageAlt: "Img",
+  });
 });

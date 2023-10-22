@@ -20,71 +20,7 @@ main {
   border-radius: 5px;
   text-align: center;
 }
-#cervezas {
-  .cerveza-card {
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    margin: 10px;
-    width: 250px;
-    text-align: center;
-    background-color: #fff;
-    display: inline-block;
-  }
 
-  .cerveza-imagen img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .cerveza-card h2 {
-    font-size: 1.5rem;
-    margin: 10px 0;
-  }
-
-  .cerveza-precio {
-    font-size: 1.2rem;
-    margin: 10px 0;
-  }
-
-  .btnAgregar {
-    background-color: #001a57;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    display: block;
-    margin-top: 10px;
-    text-align: center;
-  }
-
-  .btnAgregar:hover {
-    background-color: #191970;
-  }
-}
-
-.btnQuitar {
-  background-color: red;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 5px 10px;
-  cursor: pointer;
-  font-size: 14px;
-  margin-left: 890px;
-}
-
-.btnQuitar:hover {
-  background-color: #ff2910;
-}
-
-h2 {
-  font-size: 1.5rem;
-  text-align: center;
-}
 #cantidadCervezas {
   font-weight: bold;
   color: #333;
@@ -96,4 +32,135 @@ p {
 #totalCarrito {
   font-weight: bold;
   color: #333;
+}
+section {
+  position: fixed;
+  box-shadow: -6px -2px 25px -13px rgba(0, 0, 0, 0.15);
+  width: 340px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  padding: 30px;
+  transition: all 0.2s;
+  background-color: white;
+}
+section h1 {
+  position: absolute;
+  top: 20px;
+  right: 360px;
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.2);
+  background: url("img/carrito.png") no-repeat white;
+  background-size: 60%;
+  background-position: 9px center;
+}
+section h1 span {
+  display: block;
+  background-color: #d15280;
+  border-radius: 150px;
+  padding: 5px;
+  width: 30px;
+  text-align: center;
+  font-size: 14px;
+  margin: -10px 0 0 30px;
+}
+section h3 {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 30px;
+}
+.btnAgregar,
+.boton {
+  color: white;
+  background-color: #001a57;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px 0;
+  border: 1px solid #001a57;
+  transition: all 0.2s;
+}
+.btnQuitar {
+  color: white;
+  background-color: red;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px 0;
+  border: 1px solid #001a57;
+  transition: all 0.2s;
+}
+.btnAgregar:hover,
+.btnQuitar:hover,
+.boton:hover {
+  border: 1px solid white;
+  scale: 1.05;
+}
+.productoCarrito {
+  border-bottom: 2px dashed rgba(0, 0, 0, 0.2);
+  padding: 10px 0;
+  margin-bottom: 10px;
+  line-height: 24px;
+}
+.productoCarrito h2 {
+  margin-bottom: 8px;
+}
+.ocultar {
+  right: -340px;
+  transition: all 0.2s;
+}
+#Cervezas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  height: auto;
+}
+.cerveza {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 10px;
+  background-color: white;
+  text-align: center;
+}
+.producto .precio {
+  padding: 10px 0;
+  font-size: 20px;
+  background-color: gray;
+  display: inline-block;
+  padding: 4px 10px;
+  color: white;
+  border-radius: 10px;
+  margin-top: 4px;
+}
+.producto .imagen {
+  display: flex;
+  justify-content: center;
+  min-height: 100px;
+  margin: 20px 0;
+}
+.producto .imagen img {
+  max-height: 100px;
+}
+.producto .btnAgregar,
+.producto .boton {
+  margin: auto;
+  display: block;
+  text-align: center;
+}
+.producto:hover {
+  border: 1px solid black;
+  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.2);
+}
+#scroll {
+  max-height: 96%;
+  overflow-y: auto;
+  padding-left: 5px;
 }
