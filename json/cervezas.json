@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "nombre": "Quilmes",
+    "precio": "650",
+    "categoria": "Nacional",
+    "imagen": "quilmes.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Salta",
+    "precio": "600",
+    "categoria": "Nacional",
+    "imagen": "salta-lata.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Patagonia 24.7",
+    "precio": "900",
+    "categoria": "Artesanal",
+    "imagen": "patagonia-lata.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Carlsberg",
+    "precio": "1000",
+    "categoria": "Importada",
+    "imagen": "carlsberg-lata.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Guinnes",
+    "precio": "1300",
+    "categoria": "Importada",
+    "imagen": "guinnes-lata.jpg"
+  },
+  {
+    "id": 6,
+    "nombre": "Temple",
+    "precio": "900",
+    "categoria": "Artesanal",
+    "imagen": "temple-lata.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "Stella",
+    "precio": "750",
+    "categoria": "Importada",
+    "imagen": "stella-artois-lata.jpg"
+  },
+  {
+    "id": 8,
+    "nombre": "Penon del aguila",
+    "precio": "1000",
+    "categoria": "Artesanal",
+    "imagen": "penon-aguila-lata.jpg"
+  }
+]
